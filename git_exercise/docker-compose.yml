@@ -1,0 +1,14 @@
+version: '3'
+services: 
+    nginx:
+        # image: Reda-Belkadi/4dvop_nginx:latest-nginx
+        build: nginx
+        ports: 
+            - 8080:8080
+    haproxy:
+        # image: Reda-Belkadi/4dvop_nginx:latest-haproxy
+        build: haproxy
+        ports:
+            - 80:80
+        depends_on: 
+            - nginx 
